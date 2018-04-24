@@ -25,11 +25,8 @@ function cercafilm() {
         console.log(titolo, lingua, titoloOriginale, voto)
         var container = $('.container')
         container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + voto + '<br>' + '</div>')
-
       }
-
     }
-
   });
 }
 
