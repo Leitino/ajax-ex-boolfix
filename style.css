@@ -10,3 +10,8 @@ body{
   max-height: 100%;
   background-color: #eeeeee;
 }
+.margin{
+  width: 90%;
+  margin: auto;
+
+}

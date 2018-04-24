@@ -4,8 +4,6 @@ $(function() {
 
   })
 
-
-
 function cercafilm() {
   var search = $('#input').val()
   $.ajax({
@@ -17,8 +15,17 @@ function cercafilm() {
       query: search,
     },
     success:function(data) {
-      for (var i = 0; i < data.length; i++) {
-        console.log(data[i])
+      console.log(data)
+      $('.container').html('')
+      for (var i = 0; i < data.results.length; i++) {
+        var titolo = data.results[i].title
+        var titoloOriginale = data.results[i].original_title
+        var lingua = data.results[i].original_language
+        var voto = data.results[i].vote_average
+        console.log(titolo, lingua, titoloOriginale, voto)
+        var container = $('.container')
+        container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + voto + '<br>' + '</div>')
+
       }
 
     }
