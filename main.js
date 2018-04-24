@@ -8,19 +8,22 @@ $(function() {
 
 function cercafilm() {
   var search = $('#input').val()
-  console.log(search)
   $.ajax({
-    url:'https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=ritorno+al+futuro',
+    url:'https://api.themoviedb.org/3/search/movie',
     method: "GET",
-    success:function (data) {
+    data: {
+      api_key:'ed27a50223f9ee71021bcb238ca2a3c3',
+      language:'it',
+      query: search,
+    },
+    success:function(data) {
       for (var i = 0; i < data.length; i++) {
-        console.log(data[i].popularity)
+        console.log(data[i])
       }
 
     }
 
   });
-
 }
 
 
