@@ -30,11 +30,29 @@ function cercafilm() {
         voto = voto / 2
         var arrotondato = Math.round(voto)
         console.log(arrotondato)
+        if (arrotondato == 5) {
+          arrotondato ='<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'
+        }
+        if (arrotondato == 4) {
+          arrotondato = '<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'
+        }
+        if (arrotondato == 3) {
+          arrotondato = '<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'
+        }
+        if (arrotondato == 2) {
+          arrotondato = '<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'
+        }
+        if (arrotondato == 1) {
+          arrotondato = '<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'+'<i class="fa fa-star-o" aria-hidden="true"></i>'
+        }
+        if (arrotondato == 0) {
+          arrotondato = 'no stars'
+        }
         console.log(titolo, lingua, titoloOriginale, arrotondato)
         var container = $('.container')
         container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
       }
     }
   });
-}
+ }
 })
