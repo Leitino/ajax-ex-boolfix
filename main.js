@@ -2,7 +2,12 @@ $(function() {
   $('#button').click(function() {
     cercafilm()
 
-  })
+  });
+  $('#input').keypress(function(e) {
+    if(e.which == 13) {
+      cercafilm()
+    }
+});
 
 function cercafilm() {
   var search = $('#input').val()
@@ -29,6 +34,4 @@ function cercafilm() {
     }
   });
 }
-
-
 })
