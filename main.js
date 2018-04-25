@@ -27,9 +27,12 @@ function cercafilm() {
         var titoloOriginale = data.results[i].original_title
         var lingua = data.results[i].original_language
         var voto = data.results[i].vote_average
-        console.log(titolo, lingua, titoloOriginale, voto)
+        voto = voto / 2
+        var arrotondato = Math.round(voto)
+        console.log(arrotondato)
+        console.log(titolo, lingua, titoloOriginale, arrotondato)
         var container = $('.container')
-        container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + voto + '<br>' + '</div>')
+        container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
       }
     }
   });
