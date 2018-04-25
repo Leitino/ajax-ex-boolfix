@@ -7,7 +7,7 @@ $(function() {
     if(e.which == 13) {
       cercafilm()
     }
-});
+ });
 
 function cercafilm() {
   var search = $('#input').val()
@@ -26,10 +26,20 @@ function cercafilm() {
         var titolo = data.results[i].title
         var titoloOriginale = data.results[i].original_title
         var lingua = data.results[i].original_language
+        if (lingua == 'it') {
+          lingua = '<img class=" bandiera ita" src=italia.png>'
+        }
+        if (lingua == 'en'){
+        lingua = '<img class=" bandiera en" src=inglese.jpg>'
+        }
+        if (lingua == 'ja') {
+          lingua = '<img class="bandiera ja" src=giappone.png>'
+
+        }
         var voto = data.results[i].vote_average
         voto = voto / 2
         var arrotondato = Math.round(voto)
-        console.log(arrotondato)
+        //console.log(arrotondato)//
         if (arrotondato == 5) {
           arrotondato ='<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'+'<i class="fa fa-star gold" aria-hidden="true"></i>'
         }
@@ -48,7 +58,7 @@ function cercafilm() {
         if (arrotondato == 0) {
           arrotondato = 'no stars'
         }
-        console.log(titolo, lingua, titoloOriginale, arrotondato)
+        //console.log(titolo, lingua, titoloOriginale, arrotondato)//
         var container = $('.container')
         container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
       }

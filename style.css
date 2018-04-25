@@ -16,9 +16,13 @@ body{
 }
 .risultati{
   width: 100%;
-  height: 100px;
+  height: 130px;
   border-bottom: 1px solid black;
 }
 .gold{
   color: gold;
+}
+.bandiera{
+  width: 20px;
+  height: 20px;
 }
