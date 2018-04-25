@@ -23,6 +23,10 @@ function cercafilm() {
       console.log(data)
       $('.container').html('')
       for (var i = 0; i < data.results.length; i++) {
+        var filmOserie = data.results[i].media_type
+        console.log(filmOserie)
+        var name = data.results[i].name
+        var nameOriginale = data.results[i].original_name
         var titolo = data.results[i].title
         var titoloOriginale = data.results[i].original_title
         var lingua = data.results[i].original_language
@@ -59,8 +63,14 @@ function cercafilm() {
           arrotondato = 'no stars'
         }
         //console.log(titolo, lingua, titoloOriginale, arrotondato)//
-        var container = $('.container')
-        container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+        if (filmOserie == 'movie') {
+          var container = $('.container')
+          container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+        }
+        else {
+          var container = $('.container')
+          container.append('<div class="risultati">'+ 'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+        }
       }
     }
   });
