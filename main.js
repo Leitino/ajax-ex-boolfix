@@ -30,7 +30,7 @@ function cercafilm() {
         var titolo = data.results[i].title
         var titoloOriginale = data.results[i].original_title
         var lingua = data.results[i].original_language
-        var urlGenerico = "https://image.tmdb.org/t/p/w185/"
+        var urlGenerico = "https://image.tmdb.org/t/p/w342/"
         var immagini = data.results[i].poster_path
         var copertina = urlGenerico + immagini
 
@@ -79,6 +79,12 @@ function cercafilm() {
           container.append('<div class="risultati">'+ /*'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
         }
       }
+      $(".locandina").hover(function(){
+       $(this).hide(500)
+     });
+     $('.risultati').mouseleave(function(){
+       $('.locandina').show(1000)
+     });
     }
   });
  }
