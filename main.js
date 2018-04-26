@@ -77,7 +77,7 @@ function cercafilm() {
         else {
           var container = $('.container')
           container.append('<div class="risultati">'+ /*'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
-        }
+        }sfdsdf
       }
     }
   });
