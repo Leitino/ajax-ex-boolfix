@@ -81,6 +81,8 @@ function cercafilm() {
       }
       $(".locandina").hover(function(){
        $(this).hide(500)
+       $('.risultati').append('<div class= "filtro">')
+       $('.filtro').append('<div calss ="testo-filtro">'+'Titolo: '+ titolo)
      });
      $('.risultati').mouseleave(function(){
        $('.locandina').show(1000)
