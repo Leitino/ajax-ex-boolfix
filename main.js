@@ -30,6 +30,13 @@ function cercafilm() {
         var titolo = data.results[i].title
         var titoloOriginale = data.results[i].original_title
         var lingua = data.results[i].original_language
+        var urlGenerico = "https://image.tmdb.org/t/p/w185/"
+        var immagini = data.results[i].poster_path
+        var copertina = urlGenerico + immagini
+
+
+
+        console.log(copertina)
         if (lingua == 'it') {
           lingua = '<img class=" bandiera ita" src=italia.png>'
         }
@@ -65,7 +72,7 @@ function cercafilm() {
         //console.log(titolo, lingua, titoloOriginale, arrotondato)//
         if (filmOserie == 'movie') {
           var container = $('.container')
-          container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+          container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>'  + '<img src=" ' + copertina + ' ">' + '</div>')
         }
         else {
           var container = $('.container')
