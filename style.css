@@ -35,19 +35,23 @@ header{
 .margin2{
   width: 90%;
   margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 .container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .risultati{
   margin-top: 10px;
   color:white;
   width: 20%;
+  height: 350px;
   min-height: 200px;
-  border-bottom: 1px solid white;
+  border: 1px solid white;
 }
+
 .gold{
   color: gold;
 }
@@ -57,6 +61,7 @@ header{
 }
 .locandina{
   cursor: pointer;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  height: 100%;
 }

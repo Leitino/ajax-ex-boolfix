@@ -72,11 +72,11 @@ function cercafilm() {
         //console.log(titolo, lingua, titoloOriginale, arrotondato)//
         if (filmOserie == 'movie') {
           var container = $('.container')
-          container.append('<div class="risultati">'+ 'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>'  + '<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
+          container.append('<div class="risultati">'+ /*'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>'  + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
         }
         else {
           var container = $('.container')
-          container.append('<div class="risultati">'+ 'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+          container.append('<div class="risultati">'+ /*'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
         }
       }
     }
