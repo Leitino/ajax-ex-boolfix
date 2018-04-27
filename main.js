@@ -81,11 +81,14 @@ function cercafilm() {
       }
       $(".locandina").hover(function(){
        $(this).hide(500)
-       $('.risultati').append('<div class= "filtro">')
-       $('.filtro').append('<div calss ="testo-filtro">'+'Titolo: '+ titolo)
      });
+     $('.risultati').hover(function() {
+       $(this).append('<div class="filtro" +>' + 'Titolo: ' + titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
+
+     })
      $('.risultati').mouseleave(function(){
-       $('.locandina').show(1000)
+       $('.filtro').hide()
+       $('.locandina').show(500)
      });
     }
   });
