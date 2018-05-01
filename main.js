@@ -24,7 +24,7 @@ function cercafilm() {
       $('.container').html('')
       for (var i = 0; i < data.results.length; i++) {
         var filmOserie = data.results[i].media_type
-        console.log(filmOserie)
+        //console.log(filmOserie)//
         var name = data.results[i].name
         var nameOriginale = data.results[i].original_name
         var titolo = data.results[i].title
@@ -36,7 +36,7 @@ function cercafilm() {
 
 
 
-        console.log(copertina)
+        //console.log(copertina)//
         if (lingua == 'it') {
           lingua = '<img class=" bandiera ita" src=italia.png>'
         }
@@ -70,26 +70,33 @@ function cercafilm() {
           arrotondato = 'no stars'
         }
         //console.log(titolo, lingua, titoloOriginale, arrotondato)//
+
         if (filmOserie == 'movie') {
+          var filtroMovie = '<div class="filtro" +>' + 'Titolo: ' + titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>'
+          console.log(titolo)
           var container = $('.container')
-          container.append('<div class="risultati">'+ /*'Titolo: '+ titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>'  + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
+          container.append('<div class="risultati">'+'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
+          effetti()
         }
         else {
           var container = $('.container')
           container.append('<div class="risultati">'+ /*'Titolo: '+ name + '<br>' + 'Titolo originale: '+ nameOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + */'<img class="locandina" src=" ' + copertina + ' ">' + '</div>')
         }
       }
-      $(".locandina").hover(function(){
-       $(this).hide(500)
-     });
-     $('.risultati').hover(function() {
-       $(this).append('<div class="filtro" +>' + 'Titolo: ' + titolo + '<br>' + 'Titolo originale: '+ titoloOriginale + '<br>' + 'Lingua: ' + lingua + '<br>' + 'Voto: ' + arrotondato + '<br>' + '</div>')
 
-     })
-     $('.risultati').mouseleave(function(){
-       $('.filtro').hide()
-       $('.locandina').show(500)
-     });
+    function effetti() {
+          $(".locandina").hover(function(){
+           $(this).hide(500)
+         });
+         $('.risultati').hover(function() {
+           $(this).append( filtroMovie)
+
+         })
+         $('.risultati').mouseleave(function(){
+           $('.filtro').hide()
+           $('.locandina').show(500)
+         });
+         }
     }
   });
  }
